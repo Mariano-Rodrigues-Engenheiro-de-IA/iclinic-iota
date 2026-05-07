@@ -223,6 +223,43 @@ export default function ClientLogin() {
               />
               {errors.password && <p className="text-sm text-destructive">{errors.password}</p>}
             </div>
+
+            <div className="flex justify-end">
+              <Dialog open={resetOpen} onOpenChange={setResetOpen}>
+                <DialogTrigger asChild>
+                  <button type="button" className="text-xs text-primary hover:underline">
+                    Esqueci minha senha
+                  </button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Recuperar senha</DialogTitle>
+                    <DialogDescription>
+                      Digite seu email para receber um link de recuperação.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <form onSubmit={handleResetPassword} className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="reset-email">Email</Label>
+                      <Input
+                        id="reset-email"
+                        type="email"
+                        placeholder="seu@email.com"
+                        value={resetEmail}
+                        onChange={(e) => setResetEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <DialogFooter>
+                      <Button type="submit" disabled={resetLoading} className="w-full">
+                        {resetLoading ? "Enviando..." : "Enviar link"}
+                      </Button>
+                    </DialogFooter>
+                  </form>
+                </DialogContent>
+              </Dialog>
+            </div>
+
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? "Entrando..." : "Entrar"}
             </Button>
