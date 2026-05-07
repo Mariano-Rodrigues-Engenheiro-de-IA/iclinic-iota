@@ -52,6 +52,7 @@ const App = () => (
             <Route path="/auth" element={<Auth />} />
             <Route path="/cadastro-cliente" element={<ClientSignup />} />
             <Route path="/login-cliente" element={<ClientLogin />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/install" element={<Install />} />
             <Route path="/vendas" element={<Sales />} />
             <Route path="/ativar/:token" element={<Activate />} />
