@@ -27,6 +27,7 @@ import ClientPortfolio from "./pages/client/ClientPortfolio";
 import SelectClinic from "./pages/client/SelectClinic";
 import ClientSignup from "./pages/ClientSignup";
 import ClientLogin from "./pages/ClientLogin";
+import ResetPassword from "./pages/ResetPassword";
 import Sales from "./pages/Sales";
 import Activate from "./pages/Activate";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
